@@ -1,7 +1,7 @@
 from google.cloud import storage
 from transcribe_gcs import transcribe_gcs
 
-def transcribe_local (file_path, config=None, bucket_name='ice-speech-to-text-data'):
+def transcribe_local (file_path, bucket_name, config=None):
     """
     Asynchronously transcribes local audio files specified by file_path by
     temporarily storing them in google cloud storage (gcs) and using its 
