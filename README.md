@@ -33,7 +33,7 @@ destination_path = 'text'
 
 # Set Up Guide
 
-This guide explains how to set up a project, enable the speech-to-text API, get a service key, create a bucket to use with this application, as well as how to set up an enviroment variable to be able to run the code.
+This guide explains how to set up a project, enable the speech-to-text API, get a service account key, create a bucket to use with this application, as well as how to set up an enviroment variable to be able to run the code.
 
 ## Dependencies 
 1. google-cloud-speech
