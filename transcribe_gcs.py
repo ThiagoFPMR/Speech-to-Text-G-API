@@ -21,15 +21,16 @@ def transcribe_gcs(gcs_uri, config=None):
     operation = client.long_running_recognize(config=config, audio=audio)
 
     print("Waiting for operation to complete...")
-    response = operation.result(timeout=90)
+    response = operation.result()
     print("Concluded!")
-
+    print(response)
     # Each result is for a consecutive portion of the audio. Iterate through
     # them to get the transcripts for the entire audio file.
+    print(response.results)
     for result in response.results:
         # The first alternative is the most likely one for this portion.
         print(u"Transcript: {}".format(result.alternatives[0].transcript))
         print("Confidence: {}".format(result.alternatives[0].confidence))
         
-        return result.alternatives[0].transcript
+    return response.results
     

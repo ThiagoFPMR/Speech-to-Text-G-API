@@ -1,4 +1,10 @@
 from pydub import AudioSegment
-sound = AudioSegment.from_wav("test_file.wav")
-sound = sound.set_channels(1)
-sound.export("path.wav", format="wav")
+from playsound import playsound
+import os
+
+source_path = '../audio'
+
+for index, file in enumerate(os.listdir(source_path)):
+    sound = AudioSegment.from_file(f'{source_path}/{file}')
+    sound = sound.set_channels(1)
+    sound.export(f'{source_path}/{file[:-4]}.flac', format='flac')

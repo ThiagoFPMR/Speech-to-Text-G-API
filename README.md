@@ -13,11 +13,14 @@ Also in the main.py file is where the config parameters used by the transcriber 
 
 ```
 config = speech.RecognitionConfig(
-            encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-            sample_rate_hertz=44100,
-            language_code="en-US",
+            encoding=speech.RecognitionConfig.AudioEncoding.FLAC,
+            sample_rate_hertz=48000,
+            language_code="pt-BR",
             audio_channel_count=1,
-            enable_automatic_punctuation=True
+            enable_automatic_punctuation=True,
+            enable_spoken_punctuation=False,
+            model="phone_call",
+            use_enhanced=True
         )
 ```
 The paramaters are mostly self-descriptive, with the list of all possible languages available [here](https://cloud.google.com/speech-to-text/docs/languages). You can also find a description of the config parameters [here](https://cloud.google.com/speech-to-text/docs/reference/rest/v1/RecognitionConfig).
