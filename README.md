@@ -1,7 +1,7 @@
 # Usage Guide
 The code in this repository transcribes local audio files in a speficied path and outputs the transcriptions as text files in a separate folder.
 
-It makes use of Google Cloud's Speech-to-text and Storage APIs, requiring a service key and the creation of a bucket to be used by this applciation, which means a google cloud account is also required.
+It makes use of Google Cloud's Speech-to-text and Storage APIs, requiring a service account key and the creation of a bucket to be used by this application, which means a google cloud account is also required.
 
 As such, when running this code, you should change the bucket_name variable defined in main.py to the name of the bucket you created.
 
@@ -9,7 +9,7 @@ As such, when running this code, you should change the bucket_name variable defi
 bucket_name = 'name-of-your-bucket'
 ```
 
-Also in the main.py file is where the config parameters used by the transcriber are defined.
+Also in the main.py file are the config parameters used by the transcriber.
 
 ```
 config = speech.RecognitionConfig(
@@ -36,7 +36,7 @@ destination_path = 'text'
 
 # Set Up Guide
 
-This guide explains how to set up a project, enable the speech-to-text API, get a service key, create a bucket to use with this application, as well as how to set up an enviroment variable to be able to run the code.
+This guide explains how to set up a project, enable the speech-to-text API, get a service account key, create a bucket to use with this application, as well as how to set up an enviroment variable to be able to run the code.
 
 ## Dependencies 
 1. google-cloud-speech
@@ -59,7 +59,7 @@ Having enabled the API, you ccan use the search bar to search for "Cloud Storage
 
 ![Captura de tela 2021-11-08 194723](https://user-images.githubusercontent.com/24488357/140830347-0bffb1cb-6370-4fca-bf86-d0b3a1502a38.png)
 
-The name you give this bucket will be used later.
+The name you give this bucket will be used when running the code.
 
 ## Acquiring a Service Account Key
 To acquire the service account key you'll need to run the code, search for "APIs & Services" in the search bar and, after entering the page, navigate to Credentials.
@@ -82,7 +82,7 @@ To set up a environment variable on windows, run the following line:
 set GOOGLE_APPLICATION_CREDENTIALS=KEY_PATH
 ```
 
-Where KEY_PATH corresponds to the path to your .JSON service account key you got from the previous step.
+Where KEY_PATH corresponds to the path to the .JSON service account key you got from the previous step.
 
 The command on linux is as follows:
 
