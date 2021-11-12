@@ -13,7 +13,6 @@ config = speech.RecognitionConfig(
             language_code="pt-BR",
             audio_channel_count=1,
             enable_automatic_punctuation=True,
-            enable_spoken_punctuation=False,
             model="phone_call",
             use_enhanced=True
         )
