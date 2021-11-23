@@ -1,6 +1,7 @@
 import os
 from datetime import datetime
 from google.cloud import speech
+from preprocess_audio import preprocess_audio
 from transcribe_local import transcribe_local
 
 # Defining all important variables
@@ -19,6 +20,9 @@ config = speech.RecognitionConfig(
 
 source_path = 'audio'
 destination_path = 'text'
+
+# Preprocessing audio (uncomment to run)
+#source_path = preprocess_audio(source_path)
 
 # Running the transcriber
 
